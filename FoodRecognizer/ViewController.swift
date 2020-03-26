@@ -18,6 +18,11 @@ enum HandGesture: String {
     case none = "none"
 }
 
+struct FoodRecognized {
+    var identifier: String
+    var confidence: Double
+}
+
 
 class ViewController: UIViewController {
     
@@ -73,8 +78,17 @@ class ViewController: UIViewController {
         let classifications = observations
             .compactMap({$0 as? VNClassificationObservation})
             .filter({$0.confidence > 0.5})
-            .map({$0.identifier})
-        print("classifications: \(classifications)")
+            .sorted(by: {$0.confidence > $1.confidence})
+//            .map({$0.identifier})
+        
+        let foodRecognized = FoodRecognized(identifier: classifications.first?.identifier ?? "",
+                                            confidence: Double(classifications.first?.confidence ?? 0.0))
+        
+        
+        print(foodRecognized)
+        
+        
+        
         
     }
     
