@@ -141,6 +141,11 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         captureSession.commitConfiguration()
         
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.bounds = cameraView.frame
+        cameraView.layer.addSublayer(previewLayer)
+        previewLayer.frame = view.frame
+        
         let queue = DispatchQueue(label: "captureQueue")
         dataOutput.setSampleBufferDelegate(self, queue: queue)
         
