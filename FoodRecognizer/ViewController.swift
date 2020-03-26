@@ -26,6 +26,13 @@ struct FoodRecognized {
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var cameraView: UIImageView!
+    @IBOutlet weak var confidenceView: UIProgressView!
+    @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var foodImage: UIImageView!
+    
+    
+    
     // MARK: Camera
     let captureSession = AVCaptureSession()
     var captureDevice: AVCaptureDevice!
@@ -34,16 +41,16 @@ class ViewController: UIViewController {
     // MARK: Vision
     var requests = [VNRequest]()
     let bufferSize = 5
-    var gestureBuffer = [HandGesture]()
-    var currentGesture: HandGesture = .none {
+    var foodBuffer = [FoodRecognized]()
+    var currentFood: FoodRecognized = FoodRecognized(identifier: "", confidence: 0.0) {
         didSet {
-            gestureBuffer.append(currentGesture)
-            if gestureBuffer.count == bufferSize {
-                if gestureBuffer.filter({$0 == currentGesture}).count == bufferSize {
+            foodBuffer.append(currentFood)
+            if foodBuffer.count == bufferSize {
+                if foodBuffer.filter({$0.identifier == currentFood.identifier}).count == bufferSize {
                     //send command
-                    showAndSendGesture(currentGesture)
+                    showAndSendGesture(currentFood)
                 }
-                gestureBuffer.removeAll()
+                foodBuffer.removeAll()
             }
         }
     }
@@ -87,14 +94,15 @@ class ViewController: UIViewController {
         
         print(foodRecognized)
         
-        
+        currentFood = foodRecognized
         
         
     }
     
-    func showAndSendGesture(_ currentGesture: HandGesture){
+    func showAndSendGesture(_ currentFood: FoodRecognized){
         DispatchQueue.main.async {
-            
+            self.foodLabel.text = currentFood.identifier
+            self.confidenceView.setProgress(Float(currentFood.confidence), animated: true)
         }
     }
     
