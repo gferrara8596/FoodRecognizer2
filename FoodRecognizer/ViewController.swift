@@ -103,6 +103,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             self.foodLabel.text = currentFood.identifier
             self.confidenceView.setProgress(Float(currentFood.confidence), animated: true)
+            self.foodImage.image = UIImage(named: currentFood.identifier) ?? UIImage()
         }
     }
     
