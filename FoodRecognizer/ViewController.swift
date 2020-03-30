@@ -11,13 +11,6 @@ import AVFoundation
 import AVKit
 import Vision
 
-enum HandGesture: String {
-    case rock = "rock"
-    case paper = "paper"
-    case scissors = "scissors"
-    case none = "none"
-}
-
 struct FoodRecognized {
     var identifier: String
     var confidence: Double
