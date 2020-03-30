@@ -14,6 +14,7 @@
 		E304E647242BEB17006849BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E304E646242BEB17006849BC /* Assets.xcassets */; };
 		E304E64A242BEB17006849BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E304E648242BEB17006849BC /* LaunchScreen.storyboard */; };
 		E304E652242BEB7A006849BC /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E304E651242BEB7A006849BC /* Food101.mlmodel */; };
+		E30BBC1E2431CF1B00EF04C7 /* FoodClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E30BBC1D2431CF1B00EF04C7 /* FoodClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E304E649242BEB17006849BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E304E64B242BEB17006849BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E304E651242BEB7A006849BC /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
+		E30BBC1D2431CF1B00EF04C7 /* FoodClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				E304E651242BEB7A006849BC /* Food101.mlmodel */,
+				E30BBC1D2431CF1B00EF04C7 /* FoodClassifier.mlmodel */,
 				E304E63D242BEB15006849BC /* AppDelegate.swift */,
 				E304E63F242BEB15006849BC /* SceneDelegate.swift */,
 				E304E641242BEB15006849BC /* ViewController.swift */,
@@ -143,6 +146,7 @@
 			files = (
 				E304E642242BEB15006849BC /* ViewController.swift in Sources */,
 				E304E652242BEB7A006849BC /* Food101.mlmodel in Sources */,
+				E30BBC1E2431CF1B00EF04C7 /* FoodClassifier.mlmodel in Sources */,
 				E304E63E242BEB15006849BC /* AppDelegate.swift in Sources */,
 				E304E640242BEB15006849BC /* SceneDelegate.swift in Sources */,
 			);

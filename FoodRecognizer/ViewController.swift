@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     }
     
     func setupVision() {
-        guard let visionModel = try? VNCoreMLModel(for: Food101().model) else {
+        guard let visionModel = try? VNCoreMLModel(for: FoodClassifier().model) else {
             fatalError("Can't load vision model")
         }
         let classificationRequest = VNCoreMLRequest(model: visionModel, completionHandler: self.handleClassification(request:error:))
